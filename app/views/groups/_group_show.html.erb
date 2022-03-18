@@ -13,10 +13,14 @@
       <td><%= image_tag group.get_image, size: '50x50' %></td>
       <td><%= @group.name %></td>
       <td><%= @group.introduction %></td>
-      <% @group.users.each do |member| %>
-        <td><%= member.name %></td>
+      <% if @group.users.exists? %>
+        <% @group.users.each do |member| %>
+          <td><%= member.name %></td>
+        <% end %>
+      <% else %>
+        <td></td>
       <% end %>
-      <td>
+        <td>
         <% if @group.is_owned_by?(current_user) %>
           <%= link_to 'Edit', edit_group_path(@group), class: "btn btn-success" %></td>
         <% elsif @group.users.include?(current_user)%>
