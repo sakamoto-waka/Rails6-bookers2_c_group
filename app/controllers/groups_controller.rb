@@ -38,18 +38,18 @@ class GroupsController < ApplicationController
       render "edit"
     end
   end
-  
+
   def join
-    @group = Group.find(params[:id])
+    @group = Group.find(params[:group_id])
     @group.users << current_user
     redirect_to groups_path
-  end  
-  
+  end
+
   def destroy
     @group = Group.find(params[:id])
     @group.users.delete(current_user)
     redirect_to groups_path
-  end  
+  end
 
   private
 
