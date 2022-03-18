@@ -11,5 +11,7 @@
     <%= f.label :グループ画像 %><br>
     <%= f.file_field :image, class: "form-control-file user_image", accept: 'image/*' %>
   </div>
-  <%= f.submit 'Create Group', class: "btn btn-info" %>
+  <div class="form-group">
+    <%= f.submit 'Create Group', class: "btn btn-info" %>
+  </div>
 <% end %>
