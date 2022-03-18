@@ -50,6 +50,10 @@ class GroupsController < ApplicationController
     @group.users.delete(current_user)
     redirect_to groups_path
   end
+  
+  def all_destroy
+    
+  end 
 
   private
 
