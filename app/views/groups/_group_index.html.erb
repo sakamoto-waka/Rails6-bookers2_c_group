@@ -6,6 +6,7 @@
       <th>紹介文</th>
       <th>メンバー数</th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -20,6 +21,10 @@
           <!--<#% if group.owner_id == current_user.id %>-->
         <% if group.owner == current_user %>
           <td><%= link_to 'Edit', edit_group_path(group), class: "btn btn-success" %></td>
+          <td><%= link_to 'Destroy', group_all_destroy_path(group), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %></td>
+        <% else %>
+          <td></td>
+          <td></td>
         <% end %>
       </tr>
     <% end %>
