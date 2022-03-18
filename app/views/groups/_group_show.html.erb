@@ -14,9 +14,11 @@
       <td><%= @group.name %></td>
       <td><%= @group.introduction %></td>
       <% if @group.users.exists? %>
-        <% @group.users.each do |member| %>
-          <td><%= member.name %></td>
-        <% end %>
+        <td>
+          <% @group.users.each do |member| %>
+            <%= member.name %><br>
+          <% end %>
+        </td>
       <% else %>
         <td></td>
       <% end %>
