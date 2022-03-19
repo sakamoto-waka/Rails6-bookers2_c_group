@@ -68,6 +68,7 @@ class GroupsController < ApplicationController
     # 送信フォームからのparamsを取得
     @mail_title = params[:mail_title]
     @mail_content = params[:mail_content]
+    # ここでContactMailerのsend_mailアクションに上で変数に入れた値を渡してる
     ContactMailer.send_mail(@mail_title, @mail_content, group_users).delivery
   end  
 
